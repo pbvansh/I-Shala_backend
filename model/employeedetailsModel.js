@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const employeeDetailsSchema = new mongoose.Schema({
  
-    Email : {
+  Email : {
         type: String,
         trim: true,
         lowercase: true,

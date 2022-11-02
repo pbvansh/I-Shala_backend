@@ -5,6 +5,7 @@ const JWT = require("jsonwebtoken")
 const bcpt = require("bcryptjs")
 
 const signupEmployee = asyncHandler(async(req,res)=>{
+    console.log(req.body)
      const user = await Company.create(req.body)
      res.status(200).json(user)
 

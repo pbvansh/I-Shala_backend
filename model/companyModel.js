@@ -73,7 +73,7 @@ companySchema.pre('save',async function(){
 })
 
 companySchema.methods.genToken = function(){
-   return JWT.sign({email:this.email,id:this._id},process.env.JWT_SECRET,{expiresIn:"5d"})
+   return JWT.sign({email:this.email,id:this._id,isEmp : true},process.env.JWT_SECRET,{expiresIn:"5d"})
 }
 
 module.exports = mongoose.model('Company',companySchema)

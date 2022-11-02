@@ -63,7 +63,7 @@ userSchema.pre('save', async function(){
 })
 
 userSchema.methods.genToken = function(){
-    return JWT.sign({email:this.email,id: this._id},process.env.JWT_SECRET,{expiresIn:"5d"})
+    return JWT.sign({email:this.email,id: this._id , isEmp : false},process.env.JWT_SECRET,{expiresIn:"5d"})
 
 }
 

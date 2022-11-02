@@ -26,7 +26,8 @@ const userLogin = asyncHandler(async (req, res) => {
       email: user._doc.email,
       Fname : user._doc.firstName,
       token: user.genToken(),
-      isAuth : true
+      isAuth : true,
+      isEmp : false
     })
   }
   else {
