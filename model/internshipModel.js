@@ -4,7 +4,8 @@ const internSchema = mongoose.Schema({
 
     company_id :{
          type : mongoose.Schema.Types.ObjectId,
-         ref : "Company" 
+         ref : "Company",
+         require : true
     },
 
     Internship_Name: {

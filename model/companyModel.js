@@ -34,7 +34,7 @@ const companySchema = mongoose.Schema({
      },
     Name:{
       type : String,
-      // trim : true,
+      trim : true,
       // required:[true,"Please enter company name"]
          
     },
@@ -48,22 +48,22 @@ const companySchema = mongoose.Schema({
       //   required:[true,"Please fill this field"]
        
      },
-     details:{
-       type:String,
-      //  required:[true,"Please enter the details of company"]
-     },
-     Location :{
-        type : String,
-      //   trim : true,
-      //   required:[true,"Please enter the loaction"]
-     },
-     perks :{
-        type : String,
-      //   required:[true,""]
-     },
-     addditional_information:{
-        type:String
-     }
+   // //   details:{
+   // //     type:String,
+   // //    //  required:[true,"Please enter the details of company"]
+   // //   },
+   //   Location :{
+   //      type : String,
+   //    //   trim : true,
+   //    //   required:[true,"Please enter the loaction"]
+   //   },
+   //   perks :{
+   //      type : String,
+   //    //   required:[true,""]
+   //   },
+   //   addditional_information:{
+   //      type:String
+   //   }
 },{timestamps:true})
 
 companySchema.pre('save',async function(){

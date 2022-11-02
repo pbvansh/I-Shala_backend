@@ -4,8 +4,8 @@ const Internship = require("../model/internshipModel")
 
 
 const getInternship = asynHandler(async(req,res)=>{
-     console.log(req.query);
-     const internship = await Internship.find().populate('company_id',"Name")
+     const _id = req.params.id;
+     const internship = await Internship.find({_id}).populate('company_id',"Name")
      res.status(200).json(internship)
 })
 
