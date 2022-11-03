@@ -4,6 +4,7 @@ const Company = require("../model/companyModel")
 const JWT = require("jsonwebtoken")
 const bcpt = require("bcryptjs")
 const Internship = require("../model/internshipModel")
+const Application = require('../model/applicationModel')
 
 const signupEmployee = asyncHandler(async (req, res) => {
     console.log(req.body)
@@ -53,15 +54,22 @@ const addOtherDetails = asyncHandler(async (req, res) => {
 
 const getEmpInternship = asyncHandler(async (req, res) => {
     const company_id = req.params.id;
-    const internship = await Internship.find({company_id}).populate('company_id',["Name","About_company"])
+    const internship = await Internship.find({ company_id }).populate('company_id', ["Name", "About_company"])
     res.status(200).json(internship)
+})
+
+const getApplicantsDetails = asyncHandler(async (req, res) => {
+    const Internship_id = req.params.id;
+    const applicants = await Application.find({ Internship_id }).populate('user_id', ['firstName', 'lastName'])
+    res.status(200).json(applicants);
 })
 
 module.exports = {
     signupEmployee,
     loginEmployee,
     addOtherDetails,
-    getEmpInternship
+    getEmpInternship,
+    getApplicantsDetails
 }
 
 
