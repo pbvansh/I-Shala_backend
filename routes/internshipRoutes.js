@@ -3,7 +3,7 @@ const {createInternship, updateInternship, deleteInternship,getInternship,getSta
 
 const route = express.Router()
 
-route.get('/:id',getInternship)
+route.get('/',getInternship)
 route.get('/:id',getStaticInternship)
 route.post("/create",createInternship)
 route.post("/update/:id",updateInternship)

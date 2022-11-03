@@ -3,6 +3,7 @@ const asyncHandler = require("express-async-handler")
 const Company = require("../model/companyModel")
 const JWT = require("jsonwebtoken")
 const bcpt = require("bcryptjs")
+const Internship = require("../model/internshipModel")
 
 const signupEmployee = asyncHandler(async (req, res) => {
     console.log(req.body)
@@ -50,11 +51,17 @@ const addOtherDetails = asyncHandler(async (req, res) => {
     res.status(200).json(company)
 })
 
+const getEmpInternship = asyncHandler(async (req, res) => {
+    const company_id = req.params.id;
+    const internship = await Internship.find({company_id}).populate('company_id',["Name","About_company"])
+    res.status(200).json(internship)
+})
 
 module.exports = {
     signupEmployee,
     loginEmployee,
-    addOtherDetails
+    addOtherDetails,
+    getEmpInternship
 }
 
 
