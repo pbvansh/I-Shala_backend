@@ -60,7 +60,7 @@ const getEmpInternship = asyncHandler(async (req, res) => {
 
 const getApplicantsDetails = asyncHandler(async (req, res) => {
     const Internship_id = req.params.id;
-    const applicants = await Application.find({ Internship_id }).populate('user_id', ['firstName', 'lastName'])
+    const applicants = await Application.find({ Internship_id }).populate('user_id', ['firstName', 'lastName']);
     res.status(200).json(applicants);
 })
 
