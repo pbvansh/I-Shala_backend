@@ -40,7 +40,10 @@ const loginEmployee = asyncHandler(async (req, res) => {
     }
 
     else {
-        res.status(400).json("Invalid details")
+        res.status(200).json({
+            isAuth : false,
+            msg : "invalid details"
+          })
 
     }
 
