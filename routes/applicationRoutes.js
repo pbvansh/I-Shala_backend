@@ -3,7 +3,7 @@ const {createApplication, updateApplication,getApplication, getCoverLetter} = re
 const route = express.Router();
 
 route.post("/createapp",createApplication)
-route.post("/updateapp/:id",updateApplication)
+route.put("/updateapp/:id",updateApplication)
 route.get("/app/:id",getApplication)
 route.get("/cov/:id",getCoverLetter)
 
