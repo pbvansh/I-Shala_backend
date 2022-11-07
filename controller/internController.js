@@ -12,7 +12,8 @@ const getInternship = asynHandler(async (req, res) => {
           math.Internship_Name = req.query.category
      }
      if(req.query.stipend){
-          math.Stipend  = req.query.stipend 
+          math.Stipend  = Number(req.query.stipend)
+          console.log(math.Stipend)
      }
      if(req.query.type){
           math.Internship_type = req.query.type

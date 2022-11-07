@@ -28,7 +28,7 @@ const internSchema = mongoose.Schema({
         required:[true,"Enter the starting date"]
     },
     Stipend : {
-        type: String,
+        type: Number,
         required:[true,"Enter Internship Stipend"]
     },
     ApplyBy :{
