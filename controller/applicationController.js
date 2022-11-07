@@ -34,7 +34,7 @@ const getCoverLetter = asyncHandler(async (req, res) => {
     res.status(200).json(letter)
 })
 
-const getTotalNUmberOfApplicant = asynHandler(async (req, res) => {
+const getTotalNUmberOfApplicant = asyncHandler(async (req, res) => {
     const Internship_id = req.params.id;
     const total = await Application.countDocuments({Internship_id})
     res.status(200).json(total)
