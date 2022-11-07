@@ -10,6 +10,7 @@ route.post("/update/:id",updateInternship)
 route.post("/delete/:id",deleteInternship)
 route.post('/:id',getComapnyInternship)
 
+
 module.exports = route
 
  

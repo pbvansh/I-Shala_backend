@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+
 const asynHandler = require("express-async-handler")
 const Internship = require("../model/internshipModel")
 
@@ -62,5 +62,5 @@ module.exports = {
      deleteInternship,
      getInternship,
      getStaticInternship,
-     getComapnyInternship
+     getComapnyInternship,
 }

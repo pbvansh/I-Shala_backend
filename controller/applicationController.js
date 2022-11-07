@@ -1,6 +1,5 @@
-const mongoose = require("mongoose")
-const asyncHandler = require("express-async-handler")
 
+const asyncHandler = require("express-async-handler")
 const Application = require("../model/applicationModel")
 
 const createApplication = asyncHandler(async (req, res) => {
@@ -16,7 +15,7 @@ const updateApplication = asyncHandler(async (req, res) => {
 
 const getApplication = asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const uapp = await Application.find({ user_id:id}).populate({
+    const uapp = await Application.find({ user_id: id }).populate({
         path: "Internship_id",
         populate: {
             path: "company_id",
@@ -35,11 +34,17 @@ const getCoverLetter = asyncHandler(async (req, res) => {
     res.status(200).json(letter)
 })
 
+const getTotalNUmberOfApplicant = asynHandler(async (req, res) => {
+    const Internship_id = req.params.id;
+    const total = await Application.countDocuments({Internship_id})
+    res.status(200).json(total)
+})
 
 
 module.exports = {
     createApplication,
     updateApplication,
     getApplication,
-    getCoverLetter
+    getCoverLetter,
+    getTotalNUmberOfApplicant
 }
