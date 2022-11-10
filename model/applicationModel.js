@@ -16,7 +16,7 @@ const applicationSchema = mongoose.Schema({
    },
    application_status: {
       type: String,
-      enum : ['Applied','Pending','Seen'],
+      enum : ['Applied','Pending','Seen','Selected','Not selected'],
       default : 'Applied'
    },
    // applied_date: {
@@ -31,9 +31,6 @@ const applicationSchema = mongoose.Schema({
       type: [String],
       required: true
    }
-
-
-
 }, { timestamps: true })
 
 module.exports = mongoose.model("Application", applicationSchema)
