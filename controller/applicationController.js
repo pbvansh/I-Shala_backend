@@ -19,7 +19,7 @@ const getApplication = asyncHandler(async (req, res) => {
         path: "Internship_id",
         populate: {
             path: "company_id",
-            select: 'Name'
+            select: ['Name','email','Contact']
         }
         , select: 'Name Internship_Name TotalNoOfApplicants'
     })
