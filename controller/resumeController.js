@@ -2,6 +2,7 @@ const Resume = require("../model/resumeModel")
 const asyncHandler = require('express-async-handler')
 
 const createResume = asyncHandler(async (req, res) => {
+    console.log(req.body);
     const resume = await Resume.create(req.body)
     res.status(200).json(resume)
 })

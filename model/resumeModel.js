@@ -30,16 +30,16 @@ const resumeSchema = mongoose.Schema({
         type: [Object]
     },
     skills: {
-        type: [String],
+        type: String,
     },
     certificate: {
-        type: [String],
+        type: String,
     },
-    portfolio_or_works: {
-        type: [String]
+    Portfolio_or_works: {
+        type: String
     },
-    accomplishments: {
-        type: [String]
+    Accomplishments: {
+        type: String
     }
 
 }, { timestamps: true })
