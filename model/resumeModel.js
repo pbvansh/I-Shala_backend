@@ -1,49 +1,46 @@
 const mongoose = require("mongoose")
 
 const resumeSchema = mongoose.Schema({
-    Location: {
-        type: String,
-        required: [true, "Please enter your location"]
+    user_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     },
-    Contact: {
+    Fname: {
+        type: String,
+    },
+    Lname: {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
+    contact: {
         type: Number,
-        trim : true,
+        trim: true,
         required: [true, "Please enter your contact number"],
         min: 10
     },
-    Education: {
+    address: {
         type: String,
-        required: [true, "Please enter your education"],
-
     },
-
-    Jobs: {
-        type: [String]
+    education: {
+        type: Object,
     },
-    Internships: {
-        type: [String]
-    },
-    Courses: {
-        type: [String]
-    },
-
-    Projects: {
+    projects: {
         type: [Object]
     },
-
-    Skills:{
-        type : [String],
-        required : [true,"Enter your skills"]
-
+    skills: {
+        type: [String],
     },
-
-    Portfolio_or_works :{
-        type : [String]
+    certificate: {
+        type: [String],
     },
-    Accomplishments:{
-        type :[String]
+    portfolio_or_works: {
+        type: [String]
+    },
+    accomplishments: {
+        type: [String]
     }
-
 
 }, { timestamps: true })
 
