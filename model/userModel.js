@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         unique: true,
         required: [true, 'Email address is required'],
-        // validate: [validateEmail, "please fill a valid Email address"],l
+        // validate: [validateEmail, "please fill a valid Email address"],
         // match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/],
         // required:[true,"The E-mail field cannot be empty."]
     },
@@ -24,8 +24,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         trim : true,
         required: [true, "Please enter your password"],
-        min: 2,
-        max: 50
+        min: 6,
+        max: 20
 
     },
     Contact: {
