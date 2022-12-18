@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
 
 const employeeDetailsSchema = new mongoose.Schema({
+
+  company_id :{
+    type : mongoose.Schema.Types.ObjectId,
+    required : true
+  },
   Email : {
         type: String,
         trim: true,
