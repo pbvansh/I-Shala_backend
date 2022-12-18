@@ -1,7 +1,6 @@
 const mongoose = require("mongoose")
 
 const employeeDetailsSchema = new mongoose.Schema({
- 
   Email : {
         type: String,
         trim: true,
